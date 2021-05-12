@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: internal-deployment
+  labels:
+    app: internal
+    tier: backend
+
+spec:
+  template:
+    metadata:
+      name: internal-pod
+      labels:
+        app: internal
+
+    spec:
+      containers:
+        - name: internal-container
+          image: imgaurav3/internal:1.0
+
+  replicas: 3
+  selector:
+    matchLabels:
+      app: internal
