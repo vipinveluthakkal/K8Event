@@ -21,7 +21,10 @@ spec:
           image: imgaurav3/external:1.0
           env:
             - name: SERVER
-              value: "http://internal-clusterip:8082"
+              valueFrom:
+                secretKeyRef:
+                  name: url-secret
+                  key: serverUrl
 
   replicas: 3
   selector:
