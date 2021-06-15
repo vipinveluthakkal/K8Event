@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: internal-container
-          image: imgaurav3/internal:1.0
+          image: vipindevhub/internal:v0.1
 
   replicas: 3
   selector:
